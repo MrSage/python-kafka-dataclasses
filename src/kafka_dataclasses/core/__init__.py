@@ -6,7 +6,7 @@ from logging import Logger
 import cattrs
 from cattrs.preconf.json import make_converter
 
-from kafka_python_structured_messages.skeleton import _logger
+from kafka_dataclasses.skeleton import _logger
 
 to_json = make_converter()
 ENCODING = ('content-encoding', b'python/dataclass')

@@ -8,7 +8,7 @@
 |
 
 ================================
-kafka-python-structured-messages
+kafka-python-dataclasses
 ================================
 
 
@@ -23,7 +23,7 @@ Basic consuming:
 .. code-block:: python
 
    from dataclasses import dataclass
-   from kafka_python_structured_messages import StructuredKafkaConsumer
+   from kafka_dataclasses import StructuredKafkaConsumer
 
 
    @dataclass
@@ -40,7 +40,7 @@ Basic producing:
 .. code-block:: python
 
    from dataclasses import dataclass
-   from kafka_python_structured_messages import StructuredKafkaProducer
+   from kafka_dataclasses import StructuredKafkaProducer
 
 
    @dataclass

@@ -1,5 +1,5 @@
 """
-    Setup file for kafka-python-structured-messages.
+    Setup file for kafka-python-dataclasses.
     Use setup.cfg to configure your project.
 
     This file was generated with PyScaffold 4.2.1.

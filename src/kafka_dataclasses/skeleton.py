@@ -4,7 +4,7 @@ console script. To run this script uncomment the following lines in the
 ``[options.entry_points]`` section in ``setup.cfg``::
 
     console_scripts =
-         fibonacci = kafka_python_structured_messages.skeleton:run
+         fibonacci = kafka_dataclasses.skeleton:run
 
 Then run ``pip install .`` (or ``pip install -e .`` for editable mode)
 which will install the command ``fibonacci`` inside your current environment.
@@ -24,7 +24,7 @@ import argparse
 import logging
 import sys
 
-from kafka_python_structured_messages import __version__
+from kafka_dataclasses import __version__
 
 __author__ = "Collin Sage"
 __copyright__ = "Collin Sage"

@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from kafka_python_structured_messages.core import (
+from kafka_dataclasses.core import (
     from_structure,
     to_structure,
     add_class_structure_cache,

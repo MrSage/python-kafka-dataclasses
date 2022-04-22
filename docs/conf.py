@@ -34,7 +34,7 @@ except ImportError:
     from sphinx import apidoc
 
 output_dir = os.path.join(__location__, "api")
-module_dir = os.path.join(__location__, "../src/kafka_python_structured_messages")
+module_dir = os.path.join(__location__, "../src/kafka_dataclasses")
 try:
     shutil.rmtree(output_dir)
 except FileNotFoundError:
@@ -87,7 +87,7 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "kafka-python-structured-messages"
+project = "kafka-python-dataclasses"
 copyright = "2022, Collin Sage"
 
 # The version info for the project you're documenting, acts as replacement for
@@ -99,7 +99,7 @@ copyright = "2022, Collin Sage"
 # If you don’t need the separation provided between version and release,
 # just set them both to the same value.
 try:
-    from kafka_python_structured_messages import __version__ as version
+    from kafka_dataclasses import __version__ as version
 except ImportError:
     version = ""
 
@@ -229,7 +229,7 @@ html_static_path = ["_static"]
 # html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "kafka-python-structured-messages-doc"
+htmlhelp_basename = "kafka-python-dataclasses-doc"
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -246,7 +246,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-    ("index", "user_guide.tex", "kafka-python-structured-messages Documentation", "Collin Sage", "manual")
+    ("index", "user_guide.tex", "kafka-python-dataclasses Documentation", "Collin Sage", "manual")
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

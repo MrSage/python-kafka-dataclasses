@@ -1,8 +1,8 @@
 ================================
-kafka-python-structured-messages
+kafka-python-dataclasses
 ================================
 
-This is the documentation of **kafka-python-structured-messages**.
+This is the documentation of **kafka-python-dataclasses**.
 
 .. note::
 

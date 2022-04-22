@@ -1,5 +1,5 @@
 """
-    Dummy conftest.py for kafka_python_structured_messages.
+    Dummy conftest.py for kafka_dataclasses.
 
     If you don't know what this is for, just leave it empty.
     Read more about conftest.py under:
@@ -8,7 +8,7 @@
 """
 
 import pytest
-from kafka_python_structured_messages.core import clear_cache
+from kafka_dataclasses.core import clear_cache
 
 
 @pytest.fixture(autouse=True)
