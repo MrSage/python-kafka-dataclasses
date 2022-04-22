@@ -1,17 +1,16 @@
-import logging
-from dataclasses import dataclass, field
+import json
+from dataclasses import dataclass
 from functools import singledispatch
 from logging import Logger
-from typing import Any
 
 import cattrs
 from cattrs.preconf.json import make_converter
 
-import json
+from kafka_python_structured_messages.skeleton import _logger
 
 to_json = make_converter()
 ENCODING = ('content-encoding', b'python/dataclass')
-default_logger = logging.getLogger("kafka_python_structured_messages")
+default_logger = _logger
 
 
 @dataclass
