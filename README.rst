@@ -1,28 +1,6 @@
 .. These are examples of badges you might want to add to your README:
    please update the URLs accordingly
 
-    .. image:: https://api.cirrus-ci.com/github/<USER>/kafka-python-structured-messages.svg?branch=main
-        :alt: Built Status
-        :target: https://cirrus-ci.com/github/<USER>/kafka-python-structured-messages
-    .. image:: https://readthedocs.org/projects/kafka-python-structured-messages/badge/?version=latest
-        :alt: ReadTheDocs
-        :target: https://kafka-python-structured-messages.readthedocs.io/en/stable/
-    .. image:: https://img.shields.io/coveralls/github/<USER>/kafka-python-structured-messages/main.svg
-        :alt: Coveralls
-        :target: https://coveralls.io/r/<USER>/kafka-python-structured-messages
-    .. image:: https://img.shields.io/pypi/v/kafka-python-structured-messages.svg
-        :alt: PyPI-Server
-        :target: https://pypi.org/project/kafka-python-structured-messages/
-    .. image:: https://img.shields.io/conda/vn/conda-forge/kafka-python-structured-messages.svg
-        :alt: Conda-Forge
-        :target: https://anaconda.org/conda-forge/kafka-python-structured-messages
-    .. image:: https://pepy.tech/badge/kafka-python-structured-messages/month
-        :alt: Monthly Downloads
-        :target: https://pepy.tech/project/kafka-python-structured-messages
-    .. image:: https://img.shields.io/twitter/url/http/shields.io.svg?style=social&label=Twitter
-        :alt: Twitter
-        :target: https://twitter.com/kafka-python-structured-messages
-
 .. image:: https://img.shields.io/badge/-PyScaffold-005CA0?logo=pyscaffold
     :alt: Project generated with PyScaffold
     :target: https://pyscaffold.org/
@@ -34,10 +12,47 @@ kafka-python-structured-messages
 ================================
 
 
-    Add a short description here!
+    Structured messages for your kafka projects
 
 
-A longer description of your project goes here...
+Kafka is a really complex library and dealing with bytes can be taxing. Use these
+wonderful structured Kafka classes instead!
+
+Basic consuming:
+
+.. code-block:: python
+
+   from dataclasses import dataclass
+   from kafka_python_structured_messages import StructuredKafkaConsumer
+
+
+   @dataclass
+   class MyKafkaMessage:
+      value: str
+
+
+   for message in StructuredKafkaConsumer(['my_topic']):
+      assert type(message) == MyKafkaMessage
+
+
+Basic producing:
+
+.. code-block:: python
+
+   from dataclasses import dataclass
+   from kafka_python_structured_messages import StructuredKafkaProducer
+
+
+   @dataclass
+   class MyKafkaMessage:
+      value: str
+
+
+   StructuredKafkaProducer().send('my_topic', MyKafkaMessage("Hello, world!"))
+
+This works on deeply nested dataclasses as well!
+In theory it will also work on attrs classes, since the
+unstructuring library, `cattrs`, supports `attrs` out of the box.
 
 
 .. _pyscaffold-notes:

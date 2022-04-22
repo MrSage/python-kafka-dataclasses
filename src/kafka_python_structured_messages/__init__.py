@@ -1,3 +1,5 @@
+__all__ =["StructuredKafkaConsumer", "StructuredKafkaProducer"]
+
 import sys
 
 if sys.version_info[:2] >= (3, 8):
@@ -14,3 +16,18 @@ except PackageNotFoundError:  # pragma: no cover
     __version__ = "unknown"
 finally:
     del version, PackageNotFoundError
+
+from .core import from_structure, to_structure
+from kafka import KafkaProducer, KafkaConsumer
+from functools import partial
+
+
+StructuredKafkaProducer = partial(
+    KafkaProducer,
+    value_serializer=from_structure
+)
+
+StructuredKafkaConsumer = partial(
+    KafkaConsumer,
+    value_deserializer=to_structure,
+)

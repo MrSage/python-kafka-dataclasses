@@ -7,4 +7,12 @@
     - https://docs.pytest.org/en/stable/writing_plugins.html
 """
 
-# import pytest
+import pytest
+from kafka_python_structured_messages.core import clear_cache
+
+
+@pytest.fixture(autouse=True)
+def clear_the_cache():
+    clear_cache()
+    yield
+    clear_cache()
